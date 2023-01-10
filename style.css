@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
 
+:root{
+    --color-principal: #775ee4;
+    --black: #1d1d1d;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -8,6 +13,7 @@
 
 body {
     font-family: 'Inter', Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
 }
 #navbar {
     position: fixed;
@@ -16,7 +22,6 @@ body {
 #welcome-section {
     height: 100vh;
 }
-
 
 #navbar {
     display: flex;
@@ -47,14 +52,14 @@ body {
 }
 
 #navbar a:hover {
-    color: #25eb71;
+    color: var(--color-principal);
 }
 
 #welcome-section {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #25eb71;
+    background-color: var(--color-principal);
 }
 
 .welcome-text {
@@ -62,7 +67,7 @@ body {
     padding: 0;
     text-align: center;
     letter-spacing: -2px;
-    color: #1d1d1d;
+    color: var(--black);
 }
 
 h1 {
@@ -75,13 +80,17 @@ h2 {
 }
 
 .section-title {
-    color: #25eb71;
+    color: var(--color-principal);
     padding: 10px;
     margin: 5rem auto 5rem 3rem;
     margin-left: 3rem;
     font-size: 3rem;
     font-weight: 700;
     letter-spacing: -4px;
+}
+
+#projects-txt{
+    margin-top: 80px;
 }
 
 #projects{
@@ -96,14 +105,18 @@ h2 {
     display: flex;
     flex-direction: column;
     border-radius: 20px;
-    background-color: #1d1d1d;
+    background-color: var(--black);
     color: #ffffff;
     transition: ease-in-out 190ms;
 }
 
 .project-tile:hover{
     background: linear-gradient(to bottom,#ffffff 80%, #d1d1d141);
-    color: #25eb71;
+    color: var(--color-principal);
+}
+
+.project-tile-img:hover{
+    scale:1.1;
 }
 
 .project-tile-img-container{
@@ -115,6 +128,8 @@ h2 {
     width: 100%;
     object-fit: contain;
     border-radius: 20px 20px 0 0;
+    transition: ease-in-out 140ms;
+
 }
 
 .project-tile-text{
@@ -126,12 +141,12 @@ h2 {
 
 .project-tile-discipline{
     padding: 2px 10px;
-    background-color: #25eb71;
+    background-color: #3f3f3f;
     border-radius: 10px;
     font-size: 1rem;
     font-weight: 200;
     letter-spacing: -1px;
-    color: #1d1d1d;
+    color: #ffffff;
     width: fit-content;
 }
 
@@ -154,13 +169,13 @@ h2 {
     align-items: flex-end;
     text-align: center;
     width: 30%;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     letter-spacing: -2px;
     font-weight: 400;
-    background-color: #25eb71;
+    background-color: var(--color-principal);
     margin-top: 5rem;
     padding: 5px 2px;
-    color: #1d1d1d;
+    color: var(--black);
     text-decoration: none;
     border-radius: 20px;
     transition: ease-in-out 130ms;
@@ -168,8 +183,8 @@ h2 {
 }
 
 .project-tile-button:hover {
-    background-color: #1d1d1d;
-    color: #25eb71;
+    background-color: var(--black);
+    color: var(--color-principal);
     text-decoration: none;
     border-radius: 20px;
 }
@@ -190,13 +205,51 @@ h2 {
     font-weight: 700;
     letter-spacing: -4px;
     text-decoration: none;
-    color: #1d1d1d;
+    color: var(--black);
     transition: ease-in-out 210ms;
 }
 
 .about-button:hover {
-    color: #25eb71;
+    color: var(--color-principal);
 }
+
+#education{
+    margin: 2rem;
+    display: grid;
+    gap: 0.5rem;
+    grid-auto-rows: 15rem;
+    grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+}
+
+.education-tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    background-color: var(--black);
+    color: #ffffff;
+    transition: ease-in-out 190ms;
+}
+
+.education-tile-title{
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -2px;
+    padding: 15px;
+    line-height: 2.2rem;
+}
+
+
+
+.education-tile:hover{
+    background: linear-gradient(to bottom,#ffffff 80%, #d1d1d141);
+    color: var(--color-principal);
+    border: 1px solid #1d1d1d0a;
+}
+
+
 
 .footer-container{
     display: flex;
@@ -205,8 +258,8 @@ h2 {
     align-items: center;
     height: 200px;
     width: 100%;
-    background-color: #1d1d1d;
-    color: #25eb71;
+    background-color: var(--black);
+    color: var(--color-principal);
 }
 
 h6 {
@@ -250,7 +303,7 @@ h6 {
         font-weight: 700;
         letter-spacing: -2px;
         text-decoration: none;
-        color: #1d1d1d;
+        color: var(--black);
         transition: ease-in-out 210ms;
     }
 
@@ -259,10 +312,10 @@ h6 {
     }
     @media screen and (max-width: 450px){
         #projects{
-            margin: 2rem;
+            margin: 0.2rem;
             display: grid;
-            grid-auto-rows: 30rem;
-            grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+            grid-template-columns: 1fr;
+            gap: 2rem;
         }
     }
 }
