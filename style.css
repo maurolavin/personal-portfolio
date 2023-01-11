@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
 
 :root{
-    --color-principal: #775ee4;
+    --color-principal: #5ee47b;
     --black: #1d1d1d;
 }
 
@@ -13,7 +13,7 @@
 
 body {
     font-family: 'Inter', Arial, Helvetica, sans-serif;
-    background-color: #ffffff;
+    background-color: #e0e0e0;
 }
 #navbar {
     position: fixed;
@@ -30,7 +30,7 @@ body {
     align-items: center;
     width: 100%;
     height: 80px;
-    background-color: #1d1d1de3;
+    background-color: #1d1d1d;
 }
 
 #navbar a,
@@ -62,12 +62,22 @@ body {
     background-color: var(--color-principal);
 }
 
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
 .welcome-text {
     margin: 0;
     padding: 0;
     text-align: center;
     letter-spacing: -2px;
     color: var(--black);
+    animation: fadeIn 1.3s ease-in-out	 0.4s 1 normal both;
 }
 
 h1 {
@@ -108,11 +118,20 @@ h2 {
     background-color: var(--black);
     color: #ffffff;
     transition: ease-in-out 190ms;
+    overflow:hidden;
 }
 
 .project-tile:hover{
     background: linear-gradient(to bottom,#ffffff 80%, #d1d1d141);
     color: var(--color-principal);
+}
+
+.project-tile-description{
+    letter-spacing: -0.5px;
+}
+
+.project-tile:hover .project-tile-description {
+    color: var(--black);
 }
 
 .project-tile-img:hover{
@@ -127,9 +146,7 @@ h2 {
 .project-tile-img{
     width: 100%;
     object-fit: contain;
-    border-radius: 20px 20px 0 0;
     transition: ease-in-out 140ms;
-
 }
 
 .project-tile-text{
@@ -148,6 +165,13 @@ h2 {
     letter-spacing: -1px;
     color: #ffffff;
     width: fit-content;
+    transition: ease-in-out 0.4s;
+    cursor: pointer;
+}
+
+.project-tile-discipline:hover{
+    background-color: var(--color-principal);
+    color: var(--black);
 }
 
 .project-tile-discipline-container{
@@ -312,10 +336,10 @@ h6 {
     }
     @media screen and (max-width: 450px){
         #projects{
-            margin: 0.2rem;
+            margin: 0.5rem;
             display: grid;
             grid-template-columns: 1fr;
-            gap: 2rem;
+            gap: 1rem;
         }
     }
 }
